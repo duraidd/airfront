@@ -41,7 +41,7 @@ function Textdata({cardDetails,totalpages,setpageno}) {
               <TableCell align="right">{row.CompanyName}</TableCell>
               <TableCell align="right">{row.Email_Address}</TableCell>
               <TableCell align="right">{row.PhoneNumber}</TableCell>
-              <TableCell align="right" >{row.Address}</TableCell>
+              <TableCell align="right" >{row.Address}</TableCell>              
               <TableCell align="right" ><img src={`https://schoolback.vercel.app/${row.image_path}`} width={'50%'} height={'100px'} /></TableCell>
             </TableRow>
           ))}

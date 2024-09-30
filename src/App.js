@@ -34,7 +34,10 @@ function App() {
 
     formdata.append('image', file);
     setloading(true) 
+
     axios.post("https://schoolback.vercel.app/airdeal/upload", formdata).then((response) => {
+
+    
 
       if (response.data.status === 200) {
         setformdetal(true);
@@ -54,7 +57,10 @@ function App() {
 
   const getCardData = () => {
     setloading(true)
+
     axios.post("https://schoolback.vercel.app/airdeal/cards", { page: pageno }).then((dataResponse) => {
+
+    
       settotalpages(dataResponse.data.totalPages)
       setcardDetails(dataResponse.data.data);
     }).finally(()=>setloading(false));
