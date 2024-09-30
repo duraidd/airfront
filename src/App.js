@@ -34,7 +34,7 @@ function App() {
 
     formdata.append('image', file);
     setloading(true) 
-    axios.post("http://localhost:9999/airdeal/upload", formdata).then((response) => {
+    axios.post("https://airback.onrender.com/airdeal/upload", formdata).then((response) => {
 
       if (response.data.status === 200) {
         setformdetal(true);
