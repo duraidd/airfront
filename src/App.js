@@ -34,7 +34,7 @@ function App() {
 
     formdata.append('image', file);
     setloading(true) 
-    axios.post("https://airback.onrender.com/airdeal/upload", formdata).then((response) => {
+    axios.post("https://airdealback.onrender.com/airdeal/upload", formdata).then((response) => {
 
       if (response.data.status === 200) {
         setformdetal(true);
@@ -54,7 +54,7 @@ function App() {
 
   const getCardData = () => {
     setloading(true)
-    axios.post("https://airback.onrender.com/airdeal/cards", { page: pageno }).then((dataResponse) => {
+    axios.post("https://airdealback.onrender.com/airdeal/cards", { page: pageno }).then((dataResponse) => {
       settotalpages(dataResponse.data.totalPages)
       setcardDetails(dataResponse.data.data);
     }).finally(()=>setloading(false));

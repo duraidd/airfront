@@ -42,7 +42,7 @@ function Textdata({cardDetails,totalpages,setpageno}) {
               <TableCell align="right">{row.Email_Address}</TableCell>
               <TableCell align="right">{row.PhoneNumber}</TableCell>
               <TableCell align="right" >{row.Address}</TableCell>
-              <TableCell align="right" ><img src={`https://airback.onrender.com/${row.image_path}`} width={'50%'} height={'100px'} /></TableCell>
+              <TableCell align="right" ><img src={`https://airdealback.onrender.com/${row.image_path}`} width={'50%'} height={'100px'} /></TableCell>
             </TableRow>
           ))}
         </TableBody>
