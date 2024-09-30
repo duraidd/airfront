@@ -1,33 +1,55 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import Pagination from '@mui/material/Pagination';
 
-function Textdata() {
+
+function Textdata({cardDetails,totalpages,setpageno}) {
+
+    
+
     return (
-        <form>
-            <label>
-                Name:
-                <input type="text" value={name} onChange={e => setName(e.target.value)} />
-            </label>
-            <label>
-                Job Title:
-                <input type="text" value={jobTitle} onChange={e => setJobTitle(e.target.value)} />
-            </label>
-            <label>
-                Company Name:
-                <input type="text" value={companyName} onChange={e => setCompanyName(e.target.value)} />
-            </label>
-            <label>
-                Email Address:
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-            </label>
-            <label>
-                Phone Number:
-                <input type="tel" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
-            </label>
-            <label>
-                Address:
-                <input type="text" value={address} onChange={e => setAddress(e.target.value)} />
-            </label>
-        </form>
+        <>
+ <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell align="right">JobTitle</TableCell>
+            <TableCell align="right">CompanyName</TableCell>
+            <TableCell align="right">Email_Address</TableCell>
+            <TableCell align="right">PhoneNumber</TableCell>
+            <TableCell align="right">Address</TableCell>
+            <TableCell align="right">Visiting Card</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {cardDetails.map((row,i) => (
+            <TableRow
+              key={i}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {row.Name}
+              </TableCell>
+              <TableCell align="right">{row.JobTitle}</TableCell>
+              <TableCell align="right">{row.CompanyName}</TableCell>
+              <TableCell align="right">{row.Email_Address}</TableCell>
+              <TableCell align="right">{row.PhoneNumber}</TableCell>
+              <TableCell align="right" >{row.Address}</TableCell>
+              <TableCell align="right" ><img src={`http://localhost:9999/${row.image_path}`} width={'50%'} height={'100px'} /></TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    <Pagination count={totalpages} onChange={(e,value)=>{setpageno(value)}} />
+        </>
     )
 }
 
