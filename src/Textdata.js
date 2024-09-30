@@ -25,7 +25,6 @@ function Textdata({cardDetails,totalpages,setpageno}) {
             <TableCell align="right">Email_Address</TableCell>
             <TableCell align="right">PhoneNumber</TableCell>
             <TableCell align="right">Address</TableCell>
-            <TableCell align="right">Visiting Card</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -42,7 +41,6 @@ function Textdata({cardDetails,totalpages,setpageno}) {
               <TableCell align="right">{row.Email_Address}</TableCell>
               <TableCell align="right">{row.PhoneNumber}</TableCell>
               <TableCell align="right" >{row.Address}</TableCell>              
-              <TableCell align="right" ><img src={`https://schoolback.vercel.app/${row.image_path}`} width={'50%'} height={'100px'} /></TableCell>
             </TableRow>
           ))}
         </TableBody>
