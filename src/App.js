@@ -30,11 +30,11 @@ function App() {
 
   useEffect(() => {
 
-    const formdata = new FormData();
+   if(file){ const formdata = new FormData();
 
     formdata.append('image', file);
     setloading(true) 
-    axios.post("https://airback.onrender.com/airdeal/upload", formdata).then((response) => {
+    axios.post("http://localhost:9999/airdeal/upload", formdata).then((response) => {
 
       if (response.data.status === 200) {
         setformdetal(true);
@@ -44,7 +44,7 @@ function App() {
         toast.error(response.data.msg, { autoClose: 3000 });
       }
 
-    }).finally(()=>setloading(false))
+    }).finally(()=>setloading(false))}
 
 
   }, [file])
